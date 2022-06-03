@@ -12,8 +12,8 @@ const initialState = {
       case GET_CHARACTER:
         return {
           ...state,
-          recipes: action.payload,
-          allRecipes: action.payload,
+          character: action.payload,
+          allcharacter: action.payload,
         }; default:
         return state;
     }

@@ -32,6 +32,8 @@ module.exports = (sequelize) => {
     },
     image: {
       type: DataTypes.STRING,
+      defaultValue:  
+      "https://cn.i.cdn.ti-platform.com/content/1316/harry-potter/showpage/ar/square.33a55e72.png?imwidth=420",
       allowNull: false,
     },
     dateOfBirth: {

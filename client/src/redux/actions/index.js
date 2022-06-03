@@ -8,5 +8,5 @@ export function getCharacters (){
             type: GET_CHARACTER,
             payload: json.data
         })
-    }
+    } 
 }
