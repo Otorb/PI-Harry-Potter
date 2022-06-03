@@ -53,6 +53,7 @@ router.get('/', async (req, res) =>{
                     house: character.house,
                     image: character.image,
                     patronus: character.patronus,
+                    species: character.species,
                     actividades:[activities[Math.floor(Math.random()*activities.length)], activities[Math.floor(Math.random()*activities.length)]]
                   }
             })
@@ -64,7 +65,7 @@ router.get('/', async (req, res) =>{
 router.post('/', async (req, res) =>{
     
     
-    const {name, actor, ancestry, dateOfBirth, house, image, patronus, actividades } = req.body
+    const { name, species, actor, ancestry, dateOfBirth, house, image, patronus, actividades } = req.body
     
   
 
@@ -77,6 +78,7 @@ router.post('/', async (req, res) =>{
         dateOfBirth: dateOfBirth,
         image: image,
         patronus: patronus,  
+        species: species,
       });
         if(actividades){
             character.addActivity(actividades)

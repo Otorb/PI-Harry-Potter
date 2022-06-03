@@ -40,6 +40,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       
     },
+    species: {
+      type: DataTypes.STRING,
+      
+    },
     actividades: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },

@@ -9,8 +9,8 @@ export default function Page({ characterPorPagina, character, paginado }) {
   }
 
   return (
-    <div className="forma">
-      <ul className="lista">
+    <div className="funcion">
+      <ul className="nose">
         {
           pageNumbers?.map(number => (
               <li className="number" key={number} >

@@ -1,0 +1,77 @@
+.detail {
+    background-image: url("../images/icon.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .forma{
+    width: 75%;
+	height: 75%;
+	margin:  0 30px 10px 30px;
+	padding: 0px 30px 10px 30px;
+	background-color: rgba(255, 255, 255, 0.7);
+	font-size: 30px;
+	font-family: Sans-serif;
+	-webkit-text-stroke: 0.9px black;
+	color: rgb(101, 101, 209);
+  }
+  .title{
+	position: absolute;
+	width: 15%;
+	height: 15%;
+	text-align: center;
+}
+.title h1{	
+	text-transform: capitalize;
+	font-size: 50px;
+	color: #7F0909;
+	font-size: 50px;
+}
+.person{
+	width: 30%;
+	margin: 0px auto 0px -50%;
+    
+
+}
+/* .pero{
+    margin-top: 20%;
+    border-radius: 50%;
+} */
+.listado{
+    /* width: 100%; */
+    /* height: 100%; */
+    display: flex;
+    flex-direction: initial;
+}
+
+.types{
+    display: flex;
+	position: absolute;
+	text-align: center;
+	margin-top: 50px;
+    color: #FFC500;
+}
+.type{
+	position: relative;
+	margin: 0px 0px 0px 10px;
+	text-align: center;
+	color: green;
+} 
+.pero{
+    border-radius: 50%;
+    margin-left: 250%;
+    margin-top: 50px;
+    width: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    display: flex;
+    margin-bottom: 1rem;
+
+  }

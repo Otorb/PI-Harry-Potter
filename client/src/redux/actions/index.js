@@ -1,6 +1,11 @@
 import axios from 'axios'
 export const GET_CHARACTER = "GET_CHARACTER"
 export const GET_DETAIL = "GET_DETAIL"
+export const SEARCH_CHARACTER = "SEARCH_CHARACTER"
+export const GET_ACTIVITY = "GET_ACTIVITY"
+export const POST_CHARACTER = "POST_CHARACTER"
+
+
 
 export function getCharacters (){
     return async function(dispatch){
@@ -13,29 +18,65 @@ export function getCharacters (){
 }
 
 export const getDetail = (id) => {
-    // return async function (dispatch) {
-    //     try {
-    //       var json = await axios.get(`http://localhost:3001/character/${id}`);
-    //       return dispatch({
-    //         type: GET_DETAIL,
-    //         payload: json.data,
-    //       });
-    //     } catch (error) {
-    //       console.log(error);
-    //     }
-    //   };
-    // }
-
-    return function (dispatch) {
-      axios.get(`http://localhost:3001/character/${id}`).then(result => {
-        return dispatch({
-          type: GET_DETAIL,
-          payload: result.data,
-        });
-      })
-      .catch((err) => {
-          console.log(err, 'getDetail falla');
+    return async function (dispatch) {
+        try {
+          var json = await axios.get(`http://localhost:3001/character/${id}`);
+          return dispatch({
+            type: GET_DETAIL,
+            payload: json.data,
           });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+
+  //   return function (dispatch) {
+  //     axios.get(`http://localhost:3001/character/${id}`).then(result => {
+  //       return dispatch({
+  //         type: GET_DETAIL,
+  //         payload: result.data,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //         console.log(err, 'getDetail falla');
+  //         });
   
+  //   };
+  // };
+
+  export function searchCharacter(search) {
+    return function (dispatch) {
+      axios
+        .get("http://localhost:3001/character?name=" + search)
+        .then((character) => {
+          dispatch({
+            type: SEARCH_CHARACTER,
+            payload: character.data,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
-  };
+  }
+
+  export function getActivity(){
+    return async function (dispatch){
+        await axios.get("http://localhost:3001/activity").then((resp) =>{
+            dispatch({
+                type:GET_ACTIVITY,
+                payload: resp.data
+            })
+        })
+    }
+  }
+
+  export function postCharacter(payload) {
+    return async function (dispatch) {
+      const json = await axios.post("http://localhost:3001/pokemons", payload);
+      return json;
+    };
+  }
+
+
