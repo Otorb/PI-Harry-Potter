@@ -1,11 +1,13 @@
 import {
-    GET_CHARACTER
+    GET_CHARACTER,
+    GET_DETAIL,
 }from '../actions/index'
 
 const initialState = {
     character: [],
     allcharacter: [],
     activity: [],
+    detail:[]
   };
   function reducer(state = initialState, action) {
     switch (action.type) {
@@ -14,7 +16,13 @@ const initialState = {
           ...state,
           character: action.payload,
           allcharacter: action.payload,
-        }; default:
+        }; 
+        case GET_DETAIL:
+          return{
+            ...state,
+            detail: action.payload
+          }
+        default:
         return state;
     }
   }
