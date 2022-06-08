@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios'
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,6 +8,8 @@ import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import store from './redux/store/index'
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
+
+axios.defaults.baseURL = process.env.REACT_APP_POTTER || "http://localhost:3001/"
 
 ReactDOM.render(
   <BrowserRouter>

@@ -9,7 +9,7 @@ export const POST_CHARACTER = "POST_CHARACTER"
 
 export function getCharacters (){
     return async function(dispatch){
-        var json = await axios.get("http://localhost:3001/character")
+        var json = await axios.get(`/character`)
         return dispatch({
             type: GET_CHARACTER,
             payload: json.data
@@ -20,7 +20,7 @@ export function getCharacters (){
 export const getDetail = (id) => {
     return async function (dispatch) {
         try {
-          var json = await axios.get(`http://localhost:3001/character/${id}`);
+          var json = await axios.get(`/character/${id}`);
           return dispatch({
             type: GET_DETAIL,
             payload: json.data,
@@ -48,7 +48,7 @@ export const getDetail = (id) => {
   export function searchCharacter(search) {
     return function (dispatch) {
       axios
-        .get("http://localhost:3001/character?name=" + search)
+        .get(`/character?name=` + search)
         .then((character) => {
           dispatch({
             type: SEARCH_CHARACTER,
@@ -63,7 +63,7 @@ export const getDetail = (id) => {
 
   export function getActivity(){
     return async function (dispatch){
-        await axios.get("http://localhost:3001/activity").then((resp) =>{
+        await axios.get(`/activity`).then((resp) =>{
             dispatch({
                 type:GET_ACTIVITY,
                 payload: resp.data
@@ -74,7 +74,7 @@ export const getDetail = (id) => {
 
   export function postCharacter(payload) {
     return async function (dispatch) {
-      const json = await axios.post("http://localhost:3001/pokemons", payload);
+      const json = await axios.post(`/character`, payload);
       return json;
     };
   }
